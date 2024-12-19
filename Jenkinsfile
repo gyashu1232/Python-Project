@@ -30,14 +30,6 @@ pipeline {
                 }
             }
         }
-        stage('Clean Up') {
-            steps {
-                script {
-                    dockerImage.stop()
-                    sh 'docker rm flask-app || true'
-                }
-            }
-        }
     }
     post {
         always {
