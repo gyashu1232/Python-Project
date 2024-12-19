@@ -1,0 +1,19 @@
+# Define values for the image and Kubernetes deployment settings
+image:
+  repository: yashwanthreddy1232/flask-app
+  tag: "latest"  # This tag can be dynamically replaced in the Jenkins pipeline with build number
+  pullPolicy: IfNotPresent
+
+replicaCount: 2  # Number of pods (replicas) to deploy
+
+service:
+  type: LoadBalancer  # Exposes the service as a LoadBalancer
+  port: 80  # Port for the service
+
+resources:
+  requests:
+    cpu: 250m  # Requesting 250m of CPU
+    memory: 256Mi  # Requesting 256Mi of memory
+  limits:
+    cpu: 500m  # Limiting to 500m of CPU
+    memory: 512Mi  # Limiting to 512Mi of memory

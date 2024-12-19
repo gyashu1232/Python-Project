@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . .  # Copy all files including 'tests'
+COPY . . 
 
-CMD ["python", "app.py"]
+CMD ["python", "app/main.py"]
