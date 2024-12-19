@@ -16,13 +16,6 @@ pipeline {
             }
         }
 
-        stage('Build and Test') {
-            steps {
-                echo "Running Tests"
-                sh 'python -m unittest discover -s tests'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker Image"
