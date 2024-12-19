@@ -16,6 +16,13 @@ pipeline {
                 }
             }
         }
+        stage('Run Tests') {
+            steps {
+                script {
+                    sh 'docker run --rm ${IMAGE_NAME} python -m unittest discover -s tests'
+                }
+            }
+        }
         stage('Run Docker Container') {
             steps {
                 script {
